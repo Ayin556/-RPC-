@@ -1,5 +1,6 @@
 package com.yonyou.ucf.provider;
 
+import com.yonyou.ucf.RpcApplication;
 import com.yonyou.ucf.common.service.UserService;
 import com.yonyou.ucf.registry.LocalRegistry;
 import com.yonyou.ucf.service.VertxHttpService;
@@ -12,9 +13,12 @@ import com.yonyou.ucf.service.VertxHttpService;
  */
 public class EasyProviderExample {
     public static void main(String[] args) {
+        //RPC框架初始化
+        RpcApplication.init();
         //注册服务
         LocalRegistry.register(UserService.class.getName(), UserServiceImpl.class);
-//        VertxHttpService vertxHttpService = new VertxHttpService();
-//        vertxHttpService.start(8080);
+        //启动web服务
+        VertxHttpService vertxHttpService = new VertxHttpService();
+        vertxHttpService.start(RpcApplication.getRpcConfig().getServerPort());
     }
 }
