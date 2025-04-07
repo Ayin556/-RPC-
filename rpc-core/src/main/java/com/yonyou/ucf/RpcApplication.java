@@ -9,7 +9,7 @@ import lombok.extern.slf4j.Slf4j;
  * @author Ayin
  * @verison 1.0
  * @date 2025/4/7 下午4:50
- * @description 自定义项
+ * @description rpc标准默认配置启动类
  */
 @Slf4j
 public class RpcApplication {
