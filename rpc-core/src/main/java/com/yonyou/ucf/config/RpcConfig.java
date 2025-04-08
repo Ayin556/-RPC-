@@ -1,5 +1,6 @@
 package com.yonyou.ucf.config;
 
+import com.yonyou.ucf.serializer.SerializerKeys;
 import lombok.Data;
 
 /**
@@ -31,4 +32,8 @@ public class RpcConfig {
      * mock模拟调用
      * */
     private boolean mock=false;
+    /**
+     * 序列化器
+     * */
+    private String seriailzer= SerializerKeys.HESSIAN;
 }

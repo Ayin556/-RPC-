@@ -2,9 +2,11 @@ package com.yonyou.ucf.proxy;
 
 import cn.hutool.http.HttpRequest;
 import cn.hutool.http.HttpResponse;
+import com.yonyou.ucf.RpcApplication;
 import com.yonyou.ucf.model.RpcRequest;
 import com.yonyou.ucf.model.RpcResponse;
 import com.yonyou.ucf.serializer.JdkSerializer;
+import com.yonyou.ucf.serializer.SeriailzerFactory;
 import com.yonyou.ucf.serializer.Serializer;
 
 import java.io.IOException;
@@ -25,7 +27,7 @@ public class ServiceProxy implements InvocationHandler {
     @Override
     public Object invoke(Object proxy, Method method, Object[] args) throws Throwable {
         // 指定序列化器
-        Serializer serializer = new JdkSerializer();
+        Serializer serializer = SeriailzerFactory.getInstance(RpcApplication.getRpcConfig().getSeriailzer());
 
         // 构造请求
         RpcRequest rpcRequest = RpcRequest.builder()
