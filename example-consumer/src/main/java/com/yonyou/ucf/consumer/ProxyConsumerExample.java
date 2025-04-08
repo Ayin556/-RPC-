@@ -1,5 +1,6 @@
 package com.yonyou.ucf.consumer;
 
+import com.yonyou.ucf.RpcApplication;
 import com.yonyou.ucf.common.model.User;
 import com.yonyou.ucf.common.service.UserService;
 import com.yonyou.ucf.proxy.ServiceProxyFactory;
@@ -29,7 +30,7 @@ public class ProxyConsumerExample {
         System.out.println("静态代理结束--");
     }
     /**
-     * 动态代理-DynamicProxy
+     * 动态代理-DynamicProxy --标准类型
      * */
     public static void dynamicProxy(User user){
         UserService service = ServiceProxyFactory.getProxy(UserService.class);
@@ -42,4 +43,5 @@ public class ProxyConsumerExample {
             System.out.println("user == null");
         }
     }
+
 }
