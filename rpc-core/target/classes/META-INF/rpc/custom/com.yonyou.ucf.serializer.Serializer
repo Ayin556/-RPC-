@@ -1,0 +1,2 @@
+json=com.yonyou.ucf.serializer.JdkSerializer
+kryo=com.yonyou.ucf.serializer.KryoSerializer

@@ -1,0 +1,2 @@
+jdk=com.yonyou.ucf.serializer.JdkSerializer
+hessian=com.yonyou.ucf.serializer.HessianSerializer
