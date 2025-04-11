@@ -1,6 +1,9 @@
 package com.yonyou.ucf;
 
+import com.yonyou.ucf.config.RegistryConfig;
 import com.yonyou.ucf.config.RpcConfig;
+import com.yonyou.ucf.registry.Registry;
+import com.yonyou.ucf.registry.RegistryFactory;
 import com.yonyou.ucf.untils.ConfigUtils.ConfigUtils;
 import com.yonyou.ucf.untils.constant.RpcConstant;
 import lombok.extern.slf4j.Slf4j;
@@ -21,6 +24,11 @@ public class RpcApplication {
     public static void  init(RpcConfig newrpcConfig){
        rpcConfig = newrpcConfig;
        log.info("rpc初始化配置信息init, config = {}", newrpcConfig.toString());
+       //注册中心初始化
+       RegistryConfig registryConfig = rpcConfig.getRegistryConfig();
+       Registry registry = RegistryFactory.getInstance(registryConfig.getRegistry());
+       registry.init(registryConfig);
+       log.info("注册中心 init ,confg = {}", registryConfig.toString());
     }
 
     /**

@@ -36,4 +36,8 @@ public class RpcConfig {
      * 序列化器
      * */
     private String seriailzer= SerializerKeys.HESSIAN;
+    /**
+     * 注册中心配置
+     * */
+    private RegistryConfig registryConfig = new RegistryConfig();
 }
