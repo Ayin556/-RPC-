@@ -1,0 +1,3 @@
+roundRobin=com.yonyou.ucf.loadbalancer.RoundRobinLoadBalancer
+random=com.yonyou.ucf.loadbalancer.RandomLoadBalancer
+consistentHash=com.yonyou.ucf.loadbalancer.ConsistentHashLoadBalancer
